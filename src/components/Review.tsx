@@ -1,28 +1,42 @@
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import Carousel from "react-multi-carousel"
+import "react-multi-carousel/lib/styles.css"
 export const PeopleReview = (props) => {
   const dataReview = [
     {
-      image_url: "/assets/people1.png",
-      name: "Allison",
+      image_url: "/assets/pradip.jpeg",
+      name: "Pradip",
+      quote: "Its a great service",
     },
     {
-      image_url: "/assets/people2.png",
-      name: "Kattie",
+      image_url: "/assets/gita.jpeg",
+      quote:
+        "The services are fast and of good quality, I always recommend Shabav for everyone.",
+      name: "Gita",
     },
     {
-      image_url: "/assets/people3.png",
-      name: "Letty",
+      image_url: "/assets/rita.jpeg",
+      quote:
+        "Whenever I visit Nepal, I rent a car from Shambhav, its easy, effortless and more it has best pricing and hygiene.",
+      name: "Rita",
     },
     {
-      image_url: "/assets/people3.png",
-      name: "Letty",
+      image_url: "/assets/pradip.jpeg",
+      name: "Pradip",
+      quote: "Its a great service",
     },
     {
-      image_url: "/assets/people3.png",
-      name: "Letty",
+      image_url: "/assets/gita.jpeg",
+      quote:
+        "The services are fast and of good quality, I always recommend Shabav for everyone.",
+      name: "Gita",
     },
-  ];
+    {
+      image_url: "/assets/rita.jpeg",
+      quote:
+        "Whenever I visit Nepal, I rent a car from Shambhav, its easy, effortless and more it has best pricing and hygiene.",
+      name: "Rita",
+    },
+  ]
 
   const responsive = {
     superLargeDesktop: {
@@ -42,7 +56,7 @@ export const PeopleReview = (props) => {
       breakpoint: { max: 500, min: 500 },
       items: 1,
     },
-  };
+  }
 
   return (
     <div className="mt-20">
@@ -59,17 +73,13 @@ export const PeopleReview = (props) => {
       >
         {dataReview.map((item, key) => (
           <div className="bg-white border p-10 rounded-lg">
-            <p className="leading-relaxed italic">
-              “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis.”
-            </p>
+            <p className="leading-relaxed italic">"{item.quote}"</p>
             <div className="mt-10">
               <div className="flex items-center">
                 <img
                   src={item.image_url}
                   alt=""
-                  className="h-10 w-10 object-cover"
+                  className="h-10 w-10 object-cover rounded-full"
                 />
                 <h4 className="ml-5">{item.name}</h4>
               </div>
@@ -78,5 +88,5 @@ export const PeopleReview = (props) => {
         ))}
       </Carousel>
     </div>
-  );
-};
+  )
+}

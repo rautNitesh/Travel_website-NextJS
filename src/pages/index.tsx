@@ -1,23 +1,23 @@
-import { NextSeo } from "next-seo";
-import { MainLayout } from "../components/Layout/MainLayout";
-import { MainHero } from "../components/MainHero";
-import { Destination } from "../components/Destination";
-import { PeopleReview } from "../components/Review";
-import { Banner } from "../components/Banner";
-import { Footer } from "../components/Footer";
+import { NextSeo } from "next-seo"
+import { MainLayout } from "../components/Layout/MainLayout"
+import { MainHero } from "../components/MainHero"
+import { Destination } from "../components/Destination"
+import { PeopleReview } from "../components/Review"
+import { Banner } from "../components/Banner"
+import { Footer } from "../components/Footer"
 
 const DEFAULT_SEO = {
-  title: "Travel Site (Apsyadira)",
-  description: "Example travel web built with NextJS and Tailwindcss",
+  title: "Sambhav Travels And Tours",
+  description: "Explore Nepal with rented car from Sambhav Tours, Chitwan",
   openGraph: {
     type: "website",
     locale: "en_IE",
-    url: "https://apsyadira.com",
-    title: "Travel Site (Apsyadira)",
-    description: "Example travel web built with NextJS and Tailwindcss",
+    url: "https://sambhavtours.vercel.app",
+    title: "Sambhav Travels And Tours",
+    description: "Explore Nepal with rented car from Sambhav Tours, Chitwan",
     image:
       "https://prismic-io.s3.amazonaws.com/gary-blog%2F3297f290-a885-4cc6-9b19-3235e3026646_default.jpg",
-    site_name: "apsyadira.com",
+    site_name: "sambhavtours.vercel.app",
     imageWidth: 1200,
     imageHeight: 1200,
   },
@@ -25,14 +25,16 @@ const DEFAULT_SEO = {
     handle: "@garmeeh",
     cardType: "summary_large_image",
   },
-};
+}
 
 export default function Home() {
   return (
     <>
       <NextSeo
-        title="Travel Site (Apsyadira)"
-        description="Example travel web built with NextJS and Tailwindcss"
+        title={"Sambhav Travels And Tours"}
+        description={
+          "Explore Nepal with rented car from Sambhav Tours, Chitwan"
+        }
         openGraph={DEFAULT_SEO}
         additionalMetaTags={[
           {
@@ -41,35 +43,38 @@ export default function Home() {
           },
           {
             name: "application-name",
-            content: "Travel Web (Apsyadira)",
+            content: "sambhavtours.vercel.app",
           },
         ]}
       />
       <MainLayout>
         <MainHero />
         <div className="px-5 md:px-20 py-10">
-          <h4 className="text-3xl font-semibold">Top Destination</h4>
+          <h4 className="text-5xl font-bold">Our Services</h4>
           <p className="mt-8 w-full md:w-2/4 leading-relaxed font-semibold text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
+            Sambhav Travels & Tours Pvt. Ltd, is a reputed name on the business
+            established on 2020, situated at Balmandir Road, Bharatpur-10,
+            Chitwan. We provide all kinds of travel, tourism services at the
+            best market price than others.
+            {/* घर,रूम फ्लाइट , अफिस, होटेल, गोदाम, सर्नु परेमा हामीलाई
+            सम्झनुहोला! हामीकहाँ Yoddha ,bolaro , गाडीहरु उपलब्ध रहेको छ! आवश्यक
+            परेमा सम्झनुहोला 9855051698 9855064232 9855011698 */}
           </p>
           <Destination />
           <div className="flex justify-center mt-10">
-            <button className="border-red-500 border py-3 px-20 w-full sm:w-auto text-red-500 font-semibold mt-10 rounded-full hover:bg-red-600 hover:text-white">
-              More Destination
-            </button>
+            <a
+              href="tel:9855051698"
+              className="border-red-500 border py-3 px-20 w-full sm:w-auto text-red-500 font-semibold mt-10 rounded-full hover:bg-red-600 hover:text-white"
+            >
+              Call Us
+            </a>
           </div>
         </div>
         <div className="px-5 md:px-20 py-10">
           <div className="container mx-auto text-center w-full lg:w-2/5">
-            <h4 className="text-3xl font-semibold">
-              What travellers say about us
-            </h4>
+            <h4 className="text-3xl font-semibold">Testimonials</h4>
             <p className="mt-8 leading-relaxed font-semibold text-gray-700 ">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam.
+              Read what our customer think of our services 😎
             </p>
           </div>
           <PeopleReview />
@@ -77,18 +82,19 @@ export default function Home() {
         <div className="py-20">
           <div className="flex flex-col lg:flex-row justify-between">
             <div className="w-full lg:w-5/12 px-5 lg:px-20 ">
-              <h4 className="text-4xl font-bold">
-                Protect yourself and your family’s future{" "}
-              </h4>
+              <h4 className="text-4xl font-bold">Our Products Gallery</h4>
               <p className="leading-relaxed mt-5">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Voluptates expedita, quibusdam, consequuntur doloribus est, vel
-                autem accusamus aut aperiam sed illo consectetur odit impedit
-                distinctio! Laborum vitae itaque quo molestias.
+                Here are the some list of products we have, for more details
+                please{" "}
               </p>
-              <button className="bg-red-500 rounded-full px-5 py-3 shadow-md mt-10 text-white w-2/4">
-                Contact Us
-              </button>
+              <div className="mt-4">
+                <a
+                  href="tel:9855051698"
+                  className="bg-red-500 rounded-full mt-4 px-5 py-3 shadow-md mt-10 text-white w-2/4"
+                >
+                  Call Us
+                </a>
+              </div>
             </div>
             <div className="w-full lg:w-7/12">
               <Banner />
@@ -98,5 +104,5 @@ export default function Home() {
         <Footer />
       </MainLayout>
     </>
-  );
+  )
 }

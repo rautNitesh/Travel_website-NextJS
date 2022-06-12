@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react"
+import Link from "next/link"
+import { useRouter } from "next/router"
 
 const BottomBar = () => {
-  const router = useRouter();
+  const router = useRouter()
 
   return (
     <div className="fixed bottom-0 left-0 w-full z-30 lg:hidden">
@@ -57,58 +57,51 @@ const BottomBar = () => {
         </Link>
       </div>
     </div>
-  );
-};
+  )
+}
 
 const Navbar = () => {
-  const [pastSplash, setPastSplash] = useState("");
-  const [showSearch, setShowSearch] = useState(false);
+  const [pastSplash, setPastSplash] = useState("")
+  const [showSearch, setShowSearch] = useState(false)
 
   function handleScroll(e) {
     if (window.scrollY > Math.round(window.innerHeight / 2)) {
       setPastSplash(
         "fixed shadow-sm transition-colors duration-500 ease-in-out bg-white z-40"
-      );
-      setShowSearch(true);
+      )
+      setShowSearch(true)
     } else {
-      setPastSplash("bg-red-100");
-      setShowSearch(false);
+      setPastSplash("bg-red-100")
+      setShowSearch(false)
     }
   }
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll)
+  }, [])
 
   return (
     <nav
       className={`p-4 px-5 md:px-20  flex items-center w-full ${pastSplash}`}
     >
-      <h4 className="text-2xl font-semibold text-red-500">Travelku</h4>
+      <img src="/assets/logo.jpeg" alt="" width={50} />
+      <h4 className="text-2xl font-semibold text-red-500 ml-2">
+        Sambhav Travels And Tours Pvt. Ltd.
+      </h4>
 
       <div className="ml-auto hidden md:block">
         <div className="flex items-center justify-between">
-          {showSearch && (
-            <input
-              type="text"
-              className="px-5 py-2 rounded-full border  focus:outline-none text-sm w-full placeholder-gray-800"
-              placeholder="Search destination"
-            />
-          )}
-          <a href="" className="mx-4">
-            Login
-          </a>
           <a
-            href=""
-            className="px-5 py-2 text-white rounded-full bg-red-500 mx-4 text-sm"
+            href="tel:9855051698"
+            className="px-5 py-2 text-white rounded-full bg-red-500 mx-4 text-sm "
           >
-            Register
+            BookNow
           </a>
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
 export const MainLayout = ({ children }) => {
   return (
@@ -117,5 +110,5 @@ export const MainLayout = ({ children }) => {
       <div>{children}</div>
       <BottomBar />
     </>
-  );
-};
+  )
+}
